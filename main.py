@@ -25,7 +25,7 @@ app.add_middleware(
 logger = logging.getLogger("uvicorn.error")
 
 # ⚠️本番では必ず環境変数へ移してください
-GROQ_API_KEY = os.getenv("GROQ_API_KEY_BACKEND", "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")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") # 直接書かない！
 client = Groq(api_key=GROQ_API_KEY)
 
 # パス設定
