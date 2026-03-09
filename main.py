@@ -10,7 +10,8 @@ from typing import Optional, List
 from pydantic import BaseModel
 from docxtpl import DocxTemplate
 from fastapi.middleware.cors import CORSMiddleware
-
+from dotenv import load_dotenv
+load_dotenv() # これで.envファイルの中身が読み込まれます
 app = FastAPI()
 
 # CORS（テスト用：全許可）

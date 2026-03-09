@@ -8,12 +8,14 @@ from streamlit_autorefresh import st_autorefresh
 import os
 from datetime import datetime
 import time
+from dotenv import load_dotenv
+load_dotenv() # これで.envファイルの中身が読み込まれます
 
 # =========================
 # 1. 基本設定
 # =========================
 # ⚠️本番では必ず環境変数に移してください（漏洩対策）
-GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", os.getenv("GROQ_API_KEY", ""))
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") # 直接書かない！
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
