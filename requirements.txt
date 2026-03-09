@@ -9,3 +9,4 @@ python-multipart
 python-docx
 docxtpl
 pydantic
+python-dotenv
